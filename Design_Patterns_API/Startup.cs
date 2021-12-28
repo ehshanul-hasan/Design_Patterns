@@ -1,3 +1,4 @@
+using Design_Patterns.SOLID;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,14 @@ namespace Design_Patterns_API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Design_Patterns_API", Version = "v1" });
             });
+
+            services.AddScoped<SingleResponsibilty, SingleResponsibilty>();
+            services.AddScoped<FruitsBasket, FruitsBasket>();
+            services.AddScoped<Persistence, Persistence>();
+
+            services.AddScoped<OpenClosed, OpenClosed>();
+            services.AddScoped<Design_Patterns.SOLID.Environment, DevEnvironment>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
