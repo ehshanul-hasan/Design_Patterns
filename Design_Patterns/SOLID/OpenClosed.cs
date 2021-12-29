@@ -8,6 +8,22 @@ namespace Design_Patterns.SOLID
         Dev, QA, UAT
     }
 
+    // Open for extension closed for modification. In this example if support & production environemnt come system will get extended not modified.
+    public class OpenClosed
+    {
+
+        public readonly Environment _environment;
+        public OpenClosed(Environment environment)
+        {
+            _environment = environment;
+        }
+        public string GetHost()
+        {
+            return _environment.GetHost();
+        }
+
+    }
+
     public class Environment
     {
         public virtual string GetHost()
@@ -31,19 +47,4 @@ namespace Design_Patterns.SOLID
             return "qa...";
         }
     }
-    public class OpenClosed
-    {
-        
-        public readonly Environment _environment;
-        public OpenClosed(Environment environment)
-        {
-            _environment = environment;
-        }
-        public string GetHost()
-        {            
-            return _environment.GetHost();
-        }
-
-    }
-    
 }

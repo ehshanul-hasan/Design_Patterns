@@ -40,6 +40,10 @@ namespace Design_Patterns_API
             services.AddScoped<OpenClosed, OpenClosed>();
             services.AddScoped<Design_Patterns.SOLID.Environment, DevEnvironment>();
 
+            services.AddScoped<LiskovSubstitution, LiskovSubstitution>();
+            services.AddScoped<Grocery, Fruits>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
