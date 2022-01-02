@@ -43,6 +43,12 @@ namespace Design_Patterns_API
             services.AddScoped<LiskovSubstitution, LiskovSubstitution>();
             services.AddScoped<Grocery, Fruits>();
 
+            services.AddScoped<InterfaceSegregation, InterfaceSegregation>();
+            services.AddScoped<IMobileNotification, MobileNotification>();
+            services.AddScoped<IEmailNotification, EmaileNotification>();
+
+            services.AddScoped<DependencyInversion, DependencyInversion>();
+            services.AddScoped<IServerFilterable, ServerManager>();
 
         }
 
