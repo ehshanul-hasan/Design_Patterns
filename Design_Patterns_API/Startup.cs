@@ -1,3 +1,4 @@
+using Design_Patterns;
 using Design_Patterns.SOLID;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,7 +28,7 @@ namespace Design_Patterns_API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Design_Patterns_API", Version = "v1" });
@@ -49,6 +50,8 @@ namespace Design_Patterns_API
 
             services.AddScoped<DependencyInversion, DependencyInversion>();
             services.AddScoped<IServerFilterable, ServerManager>();
+
+            services.AddScoped<BuilderPattern, BuilderPattern>();
 
         }
 
