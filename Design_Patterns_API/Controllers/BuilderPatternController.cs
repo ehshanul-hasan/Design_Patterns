@@ -11,11 +11,13 @@ namespace Design_Patterns_API.Controllers
     {
         private readonly ILogger<SolidPrincipleController> _logger;
         private readonly BuilderPattern _builderPattern;
+        private readonly SingletonChecker _singletonChecker;
 
-        public BuilderPatternController(ILogger<SolidPrincipleController> logger, BuilderPattern builderPattern)
+        public BuilderPatternController(ILogger<SolidPrincipleController> logger, BuilderPattern builderPattern, SingletonChecker singletonChecker)
         {
             _logger = logger;
             _builderPattern = builderPattern;
+            _singletonChecker = singletonChecker;
         }
 
         [HttpGet]
@@ -24,6 +26,15 @@ namespace Design_Patterns_API.Controllers
         {
             _logger.LogInformation("Executing builder pattern.");
             var respone = _builderPattern.GetSubscription();
+            return Ok(respone);
+        }
+
+        [HttpGet]
+        [Route("singleton")]
+        public ActionResult CheckSingleton()
+        {
+            _logger.LogInformation("Executing singleton pattern.");
+            var respone = _singletonChecker.GetIP();
             return Ok(respone);
         }
     }
