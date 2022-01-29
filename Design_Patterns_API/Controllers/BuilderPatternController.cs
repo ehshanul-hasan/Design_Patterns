@@ -12,12 +12,14 @@ namespace Design_Patterns_API.Controllers
         private readonly ILogger<SolidPrincipleController> _logger;
         private readonly BuilderPattern _builderPattern;
         private readonly SingletonChecker _singletonChecker;
+        private readonly FactoryPattern __factoryPattern;
 
-        public BuilderPatternController(ILogger<SolidPrincipleController> logger, BuilderPattern builderPattern, SingletonChecker singletonChecker)
+        public BuilderPatternController(ILogger<SolidPrincipleController> logger, BuilderPattern builderPattern, SingletonChecker singletonChecker, FactoryPattern factoryPattern)
         {
             _logger = logger;
             _builderPattern = builderPattern;
             _singletonChecker = singletonChecker;
+            __factoryPattern = factoryPattern;
         }
 
         [HttpGet]
@@ -35,6 +37,15 @@ namespace Design_Patterns_API.Controllers
         {
             _logger.LogInformation("Executing singleton pattern.");
             var respone = _singletonChecker.GetIP();
+            return Ok(respone);
+        }
+
+        [HttpGet]
+        [Route("factory")]
+        public ActionResult CheckFactory()
+        {
+            _logger.LogInformation("Executing factory pattern.");
+            var respone = __factoryPattern.GetYougurt();
             return Ok(respone);
         }
     }

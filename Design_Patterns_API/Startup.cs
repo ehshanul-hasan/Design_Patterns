@@ -55,6 +55,9 @@ namespace Design_Patterns_API
 
             services.AddScoped<SingletonChecker, SingletonChecker>();
 
+            services.AddScoped<Yougurt, Yougurt>();
+            services.AddScoped<FactoryPattern, FactoryPattern>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
