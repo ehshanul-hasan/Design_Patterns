@@ -61,6 +61,9 @@ namespace Design_Patterns_API
 
             services.AddScoped<AdapterPattern, AdapterPattern>();
 
+            services.AddScoped<OrderManagement, OrderManagement>();
+            services.AddScoped<FacadePattern, FacadePattern>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

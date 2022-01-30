@@ -7,14 +7,14 @@ namespace Design_Patterns_API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class BuilderPatternController : ControllerBase
+    public class CreationalPatternController : ControllerBase
     {
         private readonly ILogger<SolidPrincipleController> _logger;
         private readonly BuilderPattern _builderPattern;
         private readonly SingletonChecker _singletonChecker;
         private readonly FactoryPattern __factoryPattern;
 
-        public BuilderPatternController(ILogger<SolidPrincipleController> logger, BuilderPattern builderPattern, SingletonChecker singletonChecker, FactoryPattern factoryPattern)
+        public CreationalPatternController(ILogger<SolidPrincipleController> logger, BuilderPattern builderPattern, SingletonChecker singletonChecker, FactoryPattern factoryPattern)
         {
             _logger = logger;
             _builderPattern = builderPattern;
