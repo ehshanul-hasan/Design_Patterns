@@ -58,6 +58,9 @@ namespace Design_Patterns_API
             services.AddScoped<Yougurt, Yougurt>();
             services.AddScoped<FactoryPattern, FactoryPattern>();
 
+
+            services.AddScoped<AdapterPattern, AdapterPattern>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

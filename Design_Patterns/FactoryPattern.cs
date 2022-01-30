@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Design_Patterns
 {
+
+    // Giving the object creation responsibility to the factory. Sub claass will have the control for object creation.
+    // Implementation class will have no idea that which object will be created.
     public class FactoryPattern
     {
         private readonly Yougurt _yougurt;
