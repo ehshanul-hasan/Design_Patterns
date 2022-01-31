@@ -11,12 +11,14 @@ namespace Design_Patterns_API.Controllers
         private readonly ILogger<StructuralPatternController> _logger;
         private readonly AdapterPattern _adapterPattern;
         private readonly FacadePattern _facadePattern;
+        private readonly DecoratorPattern _decoratorPattern;
 
-        public StructuralPatternController(ILogger<StructuralPatternController> logger, AdapterPattern adapterPattern, FacadePattern facadePattern)
+        public StructuralPatternController(ILogger<StructuralPatternController> logger, AdapterPattern adapterPattern, FacadePattern facadePattern, DecoratorPattern decoratorPattern)
         {
             _logger = logger;
             _adapterPattern = adapterPattern;
             _facadePattern = facadePattern;
+            _decoratorPattern = decoratorPattern;
         }
 
 
@@ -35,6 +37,15 @@ namespace Design_Patterns_API.Controllers
         {
             _logger.LogInformation("Executing facade pattern.");
             var respone = _facadePattern.CheckOrderManagement();
+            return Ok(respone);
+        }
+
+        [HttpGet]
+        [Route("decorator")]
+        public ActionResult CheckDecorator()
+        {
+            _logger.LogInformation("Executing decorator pattern.");
+            var respone = _decoratorPattern.SaveChanges();
             return Ok(respone);
         }
     }
