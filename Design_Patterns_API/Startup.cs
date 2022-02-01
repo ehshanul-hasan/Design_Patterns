@@ -66,6 +66,8 @@ namespace Design_Patterns_API
 
             services.AddScoped<DecoratorPattern, DecoratorPattern>();
 
+            services.AddScoped<ObeserverPattern, ObeserverPattern>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
